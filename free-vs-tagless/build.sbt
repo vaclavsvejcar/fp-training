@@ -5,7 +5,8 @@ scalaVersion := "2.12.10"
 libraryDependencies ++= Seq(
   "org.typelevel" %% "cats-core" % "2.0.0",
   "org.typelevel" %% "cats-effect" % "2.0.0",
-  "org.typelevel" %% "cats-free" % "2.0.0"
+  "org.typelevel" %% "cats-free" % "2.0.0",
+  "net.ruippeixotog" %% "scala-scraper" % "2.1.0"
 )
 
 scalacOptions ++= Seq(
