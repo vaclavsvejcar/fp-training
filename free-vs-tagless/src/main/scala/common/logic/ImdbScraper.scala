@@ -1,7 +1,7 @@
-package free.logic
+package common.logic
 
 import cats.effect.IO
-import free.domain.ImdbMovie
+import common.domain.ImdbMovie
 import net.ruippeixotog.scalascraper.browser.JsoupBrowser
 import net.ruippeixotog.scalascraper.browser.JsoupBrowser.JsoupDocument
 import net.ruippeixotog.scalascraper.dsl.DSL.Extract._

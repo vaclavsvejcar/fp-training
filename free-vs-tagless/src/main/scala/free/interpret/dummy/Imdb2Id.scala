@@ -2,7 +2,7 @@ package free.interpret.dummy
 
 import cats.{Id, ~>}
 import free.algebra.ImdbA
-import free.domain.ImdbMovie
+import common.domain.ImdbMovie
 
 object Imdb2Id extends (ImdbA ~> Id) {
   override def apply[A](fa: ImdbA[A]): Id[A] = fa match {

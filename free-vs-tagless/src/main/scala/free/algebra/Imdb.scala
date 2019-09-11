@@ -2,7 +2,7 @@ package free.algebra
 
 import cats.InjectK
 import cats.free.Free
-import free.domain.ImdbMovie
+import common.domain.ImdbMovie
 
 sealed trait ImdbA[A]
 object ImdbA {
