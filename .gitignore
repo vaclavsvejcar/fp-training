@@ -1,7 +1,7 @@
 *.class
 *.log
 
-# sbt specific
+## sbt specific
 .cache
 .history
 .lib/
@@ -12,5 +12,7 @@ src_managed/
 project/boot/
 project/plugins/project/
 
-# IntelliJ Idea specific
+## IntelliJ Idea specific
 .idea/
+
+## macOS specific
