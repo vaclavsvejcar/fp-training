@@ -12,12 +12,12 @@ import tagless.algebra.{Imdb, InOut, Log}
 object Main extends App {
 
   // --- Program definition ---
-  def program[F[_]: Monad: Log: InOut: Imdb]: F[Unit] =
+  def program[F[_]: Monad](implicit log: Log[F], imdb: Imdb[F], inOut: InOut[F]): F[Unit] =
     for {
-      _      <- Log[F].info("Fetching TOP 10 movies from IMDB")
-      movies <- Imdb[F].fetchTop10
-      _      <- Log[F].info("Movies fetched, here is the list:")
-      _      <- InOut[F].printLine(movies.map(_.show).mkString("\n"))
+      _      <- log.info("Fetching TOP 10 movies from IMDB")
+      movies <- imdb.fetchTop10
+      _      <- log.info("Movies fetched, here is the list:")
+      _      <- inOut.printLine(movies.map(_.show).mkString("\n"))
     } yield ()
 
   // --- Program execution with dummy Id interpreter ---
