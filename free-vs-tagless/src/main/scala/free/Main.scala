@@ -35,7 +35,7 @@ object Main extends App {
   def programId(): Unit   = program.foldMap(interpId)
   val programIO: IO[Unit] = program.foldMap(interpIO)
 
-  //programId() // Execute program with dummy ID interpreter
+  //programId() // Execute program with dummy Id interpreter
   programIO.unsafeRunSync() //Execute program with real-world IO interpreter
 
 }
