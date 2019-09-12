@@ -4,6 +4,11 @@ import cats.syntax.flatMap._
 
 package object tagless {
 
+  /**
+    * Instance of ''Cat's'' `Monad` for `IO` monad.
+    *
+    * @return instance of `Monad[IO]`
+    */
   implicit def monadIO: Monad[IO] = new Monad[IO] {
     override def pure[A](x: A): IO[A]                                  = IO.pure(x)
     override def flatMap[A, B](fa: IO[A])(f: A => IO[B]): IO[B]        = fa flatMap f

@@ -5,6 +5,9 @@ import cats.syntax.flatMap._
 import cats.syntax.functor._
 import tagless.algebra.{Imdb, InOut, Log}
 
+/**
+  * Example app that fetches top 10 movies from ''IMDB'', using the ''Tagless Final'' approach.
+  */
 object Main extends App {
 
   // --- Program definition ---
