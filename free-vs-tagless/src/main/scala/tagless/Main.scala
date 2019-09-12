@@ -3,6 +3,7 @@ package tagless
 import cats.Monad
 import cats.syntax.flatMap._
 import cats.syntax.functor._
+import cats.syntax.show._
 import tagless.algebra.{Imdb, InOut, Log}
 
 /**
@@ -16,7 +17,7 @@ object Main extends App {
       _      <- Log[F].info("Fetching TOP 10 movies from IMDB")
       movies <- Imdb[F].fetchTop10
       _      <- Log[F].info("Movies fetched, here is the list:")
-      _      <- InOut[F].printLine(movies.mkString("\n"))
+      _      <- InOut[F].printLine(movies.map(_.show).mkString("\n"))
     } yield ()
 
   // --- Program execution with dummy Id interpreter ---

@@ -3,6 +3,7 @@ package free
 import cats.data.EitherK
 import cats.effect.IO
 import cats.free.Free
+import cats.syntax.show._
 import cats.{Id, ~>}
 import free.algebra._
 import free.interpret.Log2InOut
@@ -28,7 +29,7 @@ object Main extends App {
       _      <- log.info("Fetching TOP 10 movies from IMDB")
       movies <- imdb.fetchTop10
       _      <- log.info("Movies fetched, here is the list:")
-      _      <- inOut.printLine(movies.mkString("\n"))
+      _      <- inOut.printLine(movies.map(_.show).mkString("\n"))
     } yield ()
 
   // --- Program Interpreters ---
