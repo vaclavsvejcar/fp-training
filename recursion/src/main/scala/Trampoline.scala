@@ -10,7 +10,7 @@ object Trampoline extends App {
 
   val testData: List[Int]   = Seq.fill(500000)(Random.nextInt).toList
   val sumCall: TailRec[Int] = sum(testData)
-  val result                = sumCall.result
+  val result: Int           = sumCall.result
 
   println(s"SUM: $result")
 }
