@@ -8,8 +8,9 @@ object Trampoline extends App {
     case x :: xs => tailcall(sum(xs).map(x + _))
   }
 
-  val testData: List[Int] = Seq.fill(500000)(Random.nextInt).toList
-  val result: Int         = sum(testData).result
+  val testData: List[Int]   = Seq.fill(500000)(Random.nextInt).toList
+  val sumCall: TailRec[Int] = sum(testData)
+  val result                = sumCall.result
 
   println(s"SUM: $result")
 }
