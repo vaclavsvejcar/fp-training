@@ -4,7 +4,7 @@ import cats.data.Validated
 
 object BetterValidationTest extends App {
   val result: BetterValidation.ValidationResult[Domain.Form] =
-    BetterValidation.validateForm("user#$", "SuperTajneHeslo", "John", "Smith", 42)
+    BetterValidation.validateForm("user", "SuperTajneHeslo#$~", "John", "Smith", 42)
 
   result match {
     case Validated.Invalid(errors) =>

@@ -1,3 +1,4 @@
+import scala.annotation.tailrec
 import scala.util.Random
 
 object PlainRec extends App {
@@ -7,7 +8,7 @@ object PlainRec extends App {
     case x :: xs => x + sum(xs)
   }
 
-  val testData: List[Int] = Seq.fill(50)(Random.nextInt).toList
+  val testData: List[Int] = Seq.fill(500000)(Random.nextInt).toList
   val result: Int         = sum(testData)
   println(s"SUM: $result")
 

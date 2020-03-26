@@ -13,7 +13,9 @@ object TailRec extends App {
     impl(list, 0)
   }
 
-  val testData: List[Int] = Seq.fill(500000)(Random.nextInt).toList
+  val x = List(1,2).
+
+  val testData: List[Int] = Seq.fill(500_000_000)(1).toList
   val result: Int         = sum(testData)
   println(s"SUM: $result")
 }
