@@ -9,10 +9,10 @@ import scala.scalajs.js.annotation.JSExportTopLevel
 object ApplicationJS {
 
   def main(): Unit = {
-    println("HELLO")
+
   }
 
-  def appendPar(targetNode: dom.Node, text: String): Unit = {
+  def appendText(targetNode: dom.Node, text: String): Unit = {
     val parNode  = dom.document.createElement("p")
     val textNode = dom.document.createTextNode(text)
     parNode.appendChild(textNode)
@@ -21,7 +21,7 @@ object ApplicationJS {
 
   @JSExportTopLevel("jsTest")
   def jsTest(): Unit =
-    appendPar(dom.document.body, "You Clicked The Button")
+    appendText(dom.document.body, "You Clicked The Button")
 
   @JSExportTopLevel("ajaxTest")
   def ajaxTest(): Unit = {
@@ -35,7 +35,7 @@ object ApplicationJS {
             case Right(d) => show"Decoded: $d Raw: $json"
           }
       )
-      .map(appendPar(dom.document.body, _))
+      .map(appendText(dom.document.body, _))
       .onComplete(_ => ())
   }
 }
